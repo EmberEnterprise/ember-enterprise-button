@@ -1,0 +1,69 @@
+$padding-base-vertical: 6px;
+$padding-base-horizontal: 12px;
+
+$font-size-base: 14px;
+
+$line-height-base: 1.428571429; // 20/14
+
+$border-radius-base: 4px;
+
+$btn-border-radius-base: $border-radius-base;
+
+$btn-default-color: #333;
+
+$btn-font-weight: normal;
+
+$cursor-disabled: not-allowed;
+
+.e-button {
+  display: inline-block;
+  margin-bottom: 0; // For input.btn
+  font-weight: $btn-font-weight;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 1px solid transparent;
+  white-space: nowrap;
+  .button-size($padding-base-vertical; $padding-base-horizontal; $font-size-base; $line-height-base; $btn-border-radius-base;);
+  .user-select(none);
+
+  &,
+  &:active,
+  &.active {
+    &:focus,
+    &.focus {
+      .tab-focus();
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &.focus {
+    color: $btn-default-color;
+    text-decoration: none;
+  }
+
+  &:active,
+  &.active {
+    outline: 0;
+    background-image: none;
+    .box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: $cursor-disabled;
+    .opacity(.65);
+    .box-shadow(none);
+  }
+
+  a& {
+    &.disabled,
+    fieldset[disabled] & {
+      pointer-events: none; // Future-proof disabling of clicks on `<a>` elements
+    }
+  }
+}
