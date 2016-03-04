@@ -28,8 +28,7 @@ export default Ember.Component.extend({
   size: 'medium',
   theme: 'bootstrap',
   aspect: 'default',
-  computedClass: Ember.computed('aspect', function() {
-    debugger;
+  computedClass: Ember.computed('aspect', 'size', function() {
     return 'btn-' + this.get('aspect') + ' btn-' + this.get('size');
   }),
   mouseUp(){
