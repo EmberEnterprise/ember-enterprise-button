@@ -4,6 +4,11 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-addon');
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     // Add options here
+    sassOptions: {
+      includePaths: [
+        'node_modules/ember-enterprise-core/scss/'
+      ]
+    }
   });
 
   /*

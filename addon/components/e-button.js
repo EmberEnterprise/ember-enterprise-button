@@ -9,7 +9,7 @@ export default Ember.Component.extend({
     'e-button',
   ],
   classNameBindings: [
-    'disabled',
+    'disabled', 'computedClass',
   ],
   attributeBindings: [
     'autofocus',
@@ -25,13 +25,20 @@ export default Ember.Component.extend({
   title: null,
   name: null,
   text: null,
-  size: 'md',
+  size: 'medium',
+  theme: 'bootstrap',
+  aspect: 'default',
+  computedClass: Ember.computed('aspect', function() {
+    return 'btn-' + this.get('aspect') + ' btn-' + this.get('size');
+  }),
+  mouseUp(){
+    this.$().blur();
+  },
   onclick: Ember.on('click', function(event) {
     if (!Ember.ViewUtils.isSimpleClick(event)) {
       return true;
     }
-
-    if (!this.get('disabled') && jQuery.isFunction(this.attrs['on-click'])) {
+    if (!this.get('disabled') && Ember.$.isFunction(this.attrs['on-click'])) {
       this.attrs['on-click'](this.get('id'));
     }
   }),
