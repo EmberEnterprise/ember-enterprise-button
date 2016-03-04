@@ -19,3 +19,7 @@ test('it renders', function(assert) {
   this.render();
   assert.equal(component._state, 'inDOM');
 });
+
+test('button has given aspect', function(assert) {
+
+});
