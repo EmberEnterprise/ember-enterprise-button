@@ -29,6 +29,15 @@ test('e-button onclick is working correctly', function(assert) {
   this.$('button').click();
 
   assert.equal(flag, true, 'exampleAction was triggered on click');
+});
 
-  // TODO: test long click , clock down
+test('e-button long click is working correctly', function(assert) {
+  let flag = false;
+  this.set('exampleAction', function() {flag = true;});
+
+  this.render(hbs`{{e-button text='myButton' onclick=(action exampleAction)}}`);
+
+  // Long click on the button
+  this.$('button').mousedown();
+  assert.equal(flag, false, 'exampleAction was not triggered');
 });
