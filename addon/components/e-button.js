@@ -41,5 +41,6 @@ export default Ember.Component.extend({
     if (!this.get('disabled') && Ember.$.isFunction(this.attrs['on-click'])) {
       this.attrs['on-click'](this.get('id'));
     }
+    
   }),
 });
