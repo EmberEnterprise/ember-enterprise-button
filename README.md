@@ -1,12 +1,18 @@
 # Ember-enterprise-button
 
-This README outlines the details of collaborating on this Ember addon.
+[![Build Status](https://travis-ci.org/EmberEnterprise/ember-enterprise-button.svg?branch=master)](https://travis-ci.org/EmberEnterprise/ember-enterprise-button)
+
+EmberEnterprise Button Component
 
 ## Installation
 
 * `git clone` this repository
 * `npm install`
 * `bower install`
+
+## Documentation
+
+[http://emberenterprise.com/doc/button_documentation.html](http://emberenterprise.com/doc/button_documentation.html)
 
 ## Running
 
